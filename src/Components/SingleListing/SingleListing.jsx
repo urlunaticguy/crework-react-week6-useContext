@@ -38,7 +38,7 @@ function SingleListing() {
   }, []);
   return (
     <div ref={ref}>
-      <div className=" lg:flex lg:flex-col lg:justify-center lg:items-center">
+      <div className=" flex flex-col justify-center items-center">
         <img className=" w-[20rem] lg:w-[28rem]" src={info.imgLink}></img>
         <div className=" w-[28rem] mt-[1rem] flex gap-[0.8rem] lg:gap-[1rem] justify-center items-center">
           <FloatingFeature data={info.processor} svgIndex={0} />
