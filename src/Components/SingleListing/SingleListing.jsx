@@ -40,7 +40,7 @@ function SingleListing() {
     <div ref={ref}>
       <div className=" flex flex-col justify-center items-center">
         <img className=" w-[20rem] lg:w-[28rem]" src={info.imgLink}></img>
-        <div className=" w-[28rem] mt-[1rem] flex gap-[0.8rem] lg:gap-[1rem] justify-center items-center">
+        <div className=" w-[20rem] lg:w-[28rem] mt-[1rem] flex gap-[0.8rem] lg:gap-[1rem] justify-center items-center">
           <FloatingFeature data={info.processor} svgIndex={0} />
           <FloatingFeature data={info.rom} svgIndex={1} />
           <FloatingFeature data={info.camera} svgIndex={2} />
@@ -65,11 +65,11 @@ function SingleListing() {
             />
           </svg>
         </span>
-        <span className=" w-[100%] px-[1rem] flex justify-between font-bold text-[1.2rem]">
+        <span className=" w-[100%] px-[1rem] flex justify-between font-bold text-[1rem] lg:text-[1.2rem]">
           <span>Color</span>
           <span>{info.color}</span>
         </span>
-        <span className=" w-[100%] px-[1rem] flex justify-between font-bold text-[1.2rem]">
+        <span className=" w-[100%] px-[1rem] flex justify-between font-bold text-[1rem] lg:text-[1.2rem]">
           <span>Display</span>
           <span>{info.screen}</span>
         </span>
