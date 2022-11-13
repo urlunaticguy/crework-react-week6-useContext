@@ -7,12 +7,12 @@ function BrandEach() {
   const { brandName } = useParams();
   const phonesData = Data[brandName];
   return (
-    <div className=" pt-[4rem] bg-[#cee1f3] lg:flex lg:flex-wrap lg:justify-center">
+    <div className=" pt-[4rem] bg-[#cee1f3] sm:flex sm:flex-wrap sm:justify-center">
       {phonesData.map((data, index) => (
         <Link
           to={`/brand/${brandName}/${data.id}`}
           key={data.id}
-          className=" shadow-[inset_-12px_-8px_40px_#46464620] bg-[#cee1f3] hover:bg-[#bcd8f2] border-b-4 lg:border-b-0 border-white flex py-4 lg:w-[25%]"
+          className=" shadow-[inset_-12px_-8px_40px_#46464620] bg-[#cee1f3] hover:bg-[#bcd8f2] border-b-4 lg:border-b-0 border-white flex py-4 sm:w-[50%] lg:w-[33.33%] 2xl:w-[25%]"
         >
           <div className=" w-[45%] lg:w-[20rem] flex justify-start items-center">
             <img

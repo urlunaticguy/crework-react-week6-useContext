@@ -67,6 +67,18 @@ const AppState = (props) => {
     }
   };
 
+  const removeFromFavourites = (brandName, index) => {
+    Data[brandName][index].favStroke = "currentColor";
+    Data[brandName][index].favFill = "none";
+    for (let i = 0; i < favouriteData.length; i++) {
+      let grabElement = favouriteData[i];
+      if (grabElement[0] === brandName && grabElement[1] === index) {
+        favouriteData.pop(i);
+        break;
+      }
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -76,6 +88,7 @@ const AppState = (props) => {
         addToFavourite,
         cartTotal,
         updateFromCart,
+        removeFromFavourites,
       }}
     >
       {props.children}

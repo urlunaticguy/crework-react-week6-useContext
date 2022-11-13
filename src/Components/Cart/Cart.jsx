@@ -1,4 +1,5 @@
 import { React, useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import AppContext from "../../Context/AppContext";
 import Data from "../../utils/AllData";
 import currencyFormatter from "../../utils/CurrencyFormatter";
@@ -26,14 +27,14 @@ function Cart() {
   };
 
   return (
-    <div className=" min-h-screen pt-[4rem] pb-[1rem] bg-blue-300 px-4">
+    <div className=" min-h-screen pt-[4rem] pb-[1rem] bg-blue-300 px-4 lg:flex lg:flex-col lg:items-center">
       {cartArray.length === 0 && (
-        <div className="shadow-[rgba(0,_0,_0,_0.6)_0px_5px_10px] text-[1.2rem] text-center w-[100%] bg-white p-2 rounded-[15px]">
+        <div className="shadow-[rgba(0,_0,_0,_0.6)_0px_5px_10px] text-[1.2rem] text-center w-[100%] lg:w-[40rem] bg-white p-2 rounded-[15px]">
           <strong>You have no items in Cart.</strong>
         </div>
       )}
       {cartArray.length > 0 && (
-        <div className=" mb-[1.5rem] shadow-[rgba(0,_0,_0,_0.6)_0px_5px_10px] text-[1.2rem] flex flex-col justify-center items-center text-center w-[100%] bg-white p-2 rounded-[15px]">
+        <div className=" mb-[1.5rem] shadow-[rgba(0,_0,_0,_0.6)_0px_5px_10px] text-[1.2rem] lg:text-[1.4rem] flex flex-col lg:flex-row lg:gap-[2rem] justify-center items-center text-center w-[100%] lg:w-[40rem] bg-white p-2 rounded-[15px]">
           <span className=" font-bold">
             Cart Amount = {currencyFormatter.format(cartAmount)}
           </span>
@@ -41,15 +42,15 @@ function Cart() {
         </div>
       )}
       {cartArray.map((data, index) => (
-        <div className=" mb-[1.5rem] shadow-[rgba(0,_0,_0,_0.6)_0px_5px_10px] text-[1.2rem] flex flex-col justify-center items-center text-center w-[100%] bg-white p-2 rounded-[15px]">
+        <div className=" hover:bg-slate-50 mb-[1.5rem] shadow-[rgba(0,_0,_0,_0.6)_0px_5px_10px] text-[1.2rem] flex flex-col justify-center items-center text-center w-[100%] lg:w-[40rem] bg-white p-2 rounded-[15px]">
           <div className=" flex w-[100%]">
-            <div className="">
+            <Link to={"/brand/" + data[0] + "/" + data[1]}>
               <img
-                className=" w-[10rem]"
+                className=" w-[10rem] lg:w-[15rem]"
                 src={Data[data[0]][data[1]].imgLink}
               ></img>
-            </div>
-            <div className=" flex flex-col w-[70%] px-[0.5rem] justify-start text-start text-[1rem]">
+            </Link>
+            <div className=" flex flex-col w-[70%] px-[0.5rem] lg:justify-center justify-start text-start text-[1rem] lg:text-[1.2rem]">
               <strong>{Data[data[0]][data[1]].phoneName}</strong>
               <span>{Data[data[0]][data[1]].color}</span>
               <span>{Data[data[0]][data[1]].rom}</span>

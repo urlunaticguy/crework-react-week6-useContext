@@ -39,7 +39,9 @@ function SingleListing() {
   return (
     <div ref={ref}>
       <div className=" flex flex-col justify-center items-center">
-        <img className=" w-[20rem] lg:w-[28rem]" src={info.imgLink}></img>
+        <div className=" w-[20rem] flex overflow-x-auto overflow-y-hidden no-scrollbar">
+          <img className=" w-[20rem] lg:w-[28rem]" src={info.imgLink}></img>
+        </div>
         <div className=" w-[20rem] lg:w-[28rem] mt-[1rem] flex gap-[0.8rem] lg:gap-[1rem] justify-center items-center">
           <FloatingFeature data={info.processor} svgIndex={0} />
           <FloatingFeature data={info.rom} svgIndex={1} />

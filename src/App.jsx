@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Home/Home";
-import CategoryHome from "./Components/Category/CategoryHome";
 import AppState from "./Context/AppState";
 import BrandHome from "./Components/Brand/BrandHome";
 import BrandEach from "./Components/Brand/BrandEach";
@@ -61,7 +60,6 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/catHome" element={<CategoryHome />}></Route>
         <Route path="/brandHome" element={<BrandHome />}></Route>
         <Route path="/brand/:brandName" element={<BrandEach />}></Route>
         <Route path="/brand/:brandName/:id" element={<SingleListing />}></Route>

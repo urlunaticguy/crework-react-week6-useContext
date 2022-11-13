@@ -8,7 +8,7 @@ function MinusSVG() {
       viewBox="0 0 24 24"
       strokeWidth={3}
       stroke="white"
-      className="w-[2rem]"
+      className="w-[2rem] hover:cursor-pointer"
     >
       <path
         strokeLinecap="round"
